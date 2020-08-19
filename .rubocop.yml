@@ -1,0 +1,213 @@
+require:
+  - rubocop-rspec
+  - rubocop-performance
+  - rubocop-rails
+inherit_mode:
+  merge:
+    - Include
+    - Exclude
+
+AllCops:
+  TargetRubyVersion: 2.7
+  Include:
+    - Gemfile
+    - Rakefile
+    - config.ru
+    - lib/tasks/*
+  Exclude:
+    - db/schema.rb
+    - db/migrate/2018*
+    - db/migrate/2019*
+    - db/migrate/2020*
+    - bin/*
+    - lib/templates/**/*
+
+Layout/DotPosition:
+  EnforcedStyle: leading
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: true
+Layout/LineLength:
+  Max: 120
+  Exclude:
+    - db/migrate/*
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+Lint/AmbiguousBlockAssociation:
+  Enabled: false
+Lint/DeprecatedOpenSSLConstant:
+  Enabled: true
+Lint/RaiseException:
+  Enabled: true
+Lint/StructNewOverride:
+  Enabled: true
+Metrics/AbcSize:
+  Max: 30
+  Exclude:
+    - db/migrate/*
+    - app/models/ability.rb
+Metrics/BlockLength:
+  ExcludedMethods:
+    - class_methods
+    - aasm
+  Exclude:
+    - config/**/*
+    - lib/tasks/*
+    - spec/**/*
+    - db/**/*
+Metrics/ClassLength:
+  Enabled: false
+Metrics/MethodLength:
+  Max: 30
+  Exclude:
+    - db/migrate/*
+    - app/models/ability.rb
+Metrics/ModuleLength:
+  Max: 200
+RSpec/DescribedClass:
+  Enabled: false
+RSpec/ExampleLength:
+  Enabled: false
+RSpec/ImplicitExpect:
+  EnforcedStyle: should
+RSpec/LetSetup:
+  Enabled: false
+RSpec/MultipleExpectations:
+  Enabled: false
+Rails/ActiveRecordOverride:
+  Enabled: false
+Rails/ApplicationRecord:
+  Exclude:
+    - db/migrate/*
+Rails/HasAndBelongsToMany:
+  Enabled: false
+Rails/InverseOf:
+  Enabled: false
+Rails/SkipsModelValidations:
+  Enabled: false
+Rails/UnknownEnv:
+  Environments:
+    - production
+    - development
+    - cypress
+    - test
+    - pull_request
+Style/Documentation:
+  Enabled: false
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+Style/ExponentialNotation:
+  Enabled: true
+Style/FormatStringToken:
+  EnforcedStyle: template
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/GlobalVars:
+  AllowedVariables:
+    - $after_migrate_tasks
+    - $original_stdout
+Style/HashEachMethods:
+  Enabled: false
+Style/HashTransformKeys:
+  Enabled: true
+Style/HashTransformValues:
+  Enabled: true
+Style/NumericLiterals:
+  Enabled: false
+Style/SlicingWithRange:
+  Enabled: true
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+Lint/BinaryOperatorWithIdenticalOperands:
+  Enabled: true
+Lint/DuplicateElsifCondition:
+  Enabled: true
+Lint/DuplicateRescueException:
+  Enabled: true
+Lint/EmptyConditionalBody:
+  Enabled: true
+Lint/FloatComparison:
+  Enabled: true
+Lint/MissingSuper:
+  Enabled: true
+Lint/MixedRegexpCaptureTypes:
+  Enabled: true
+Lint/OutOfRangeRegexpRef:
+  Enabled: true
+Lint/SelfAssignment:
+  Enabled: true
+Lint/TopLevelReturnWithArgument:
+  Enabled: true
+Lint/UnreachableLoop:
+  Enabled: true
+Style/AccessorGrouping:
+  Enabled: true
+Style/ArrayCoercion:
+  Enabled: true
+Style/BisectedAttrAccessor:
+  Enabled: true
+Style/CaseLikeIf:
+  Enabled: true
+Style/ExplicitBlockArgument:
+  Enabled: true
+Style/GlobalStdStream:
+  Enabled: true
+Style/HashAsLastArrayItem:
+  Enabled: true
+Style/HashLikeCase:
+  Enabled: true
+Style/OptionalBooleanParameter:
+  Enabled: true
+Style/RedundantAssignment:
+  Enabled: true
+Style/RedundantFetchBlock:
+  Enabled: true
+Style/RedundantFileExtensionInRequire:
+  Enabled: true
+Style/RedundantRegexpCharacterClass:
+  Enabled: true
+Style/RedundantRegexpEscape:
+  Enabled: true
+Style/SingleArgumentDig:
+  Enabled: true
+Style/StringConcatenation:
+  Enabled: true
+Performance/AncestorsInclude:
+  Enabled: true
+Performance/BigDecimalWithNumericArgument:
+  Enabled: true
+Performance/RedundantSortBlock:
+  Enabled: true
+Performance/RedundantStringChars:
+  Enabled: true
+Performance/ReverseFirst:
+  Enabled: true
+Performance/SortReverse:
+  Enabled: true
+Performance/Squeeze:
+  Enabled: true
+Performance/StringInclude:
+  Enabled: true
+Rails/ActiveRecordCallbacksOrder:
+  Enabled: true
+Rails/FindById:
+  Enabled: true
+Rails/Inquiry:
+  Enabled: true
+Rails/MailerName:
+  Enabled: true
+Rails/MatchRoute:
+  Enabled: true
+Rails/NegateInclude:
+  Enabled: true
+Rails/Pluck:
+  Enabled: true
+Rails/PluckInWhere:
+  Enabled: true
+Rails/RenderInline:
+  Enabled: true
+Rails/RenderPlainText:
+  Enabled: true
+Rails/ShortI18n:
+  Enabled: true
+Rails/WhereExists:
+  Enabled: true
